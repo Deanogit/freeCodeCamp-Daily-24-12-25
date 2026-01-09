@@ -18,9 +18,17 @@ function parseImage(markdown) {
 
   // capture the alt text & image url
   // split the string? or regex capture groups?
-  const regex = /\]\(/;
-  console.log(markdown.split(regex));
-  const clean = /(a-z\s)/gi;
+  const first = /\!\[/gi;
+  const second = /](/gi;
+  const third = /\)/gi;
+
+  const firstSplit = markdown.split(first);
+  const secondSplit = firstSplit[1].split(second);
+  const thirdSplit = secondSplit[1].split(third);
+  console.log(thirdSplit);
+
+  // const clean = /\!\[/gi
+  // const split = markdown.split(regex))
   // but i need to keep the (/-.)
 
   // so regex for [()] and (())
