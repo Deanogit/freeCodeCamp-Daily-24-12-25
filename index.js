@@ -11,3 +11,18 @@
 
 // Make sure the tag, order of attributes, spacing, and quote usage is the same as above.
 // Note: The console may not display HTML tags in strings when logging messages — check the browser console to see logs with tags included.
+
+function parseImage(markdown) {
+  console.log(markdown);
+  // "![alt text](image_url)"
+
+  // capture the alt text & image url
+  // split the string? or regex capture groups?
+  const regex = /\]\(/;
+  console.log(markdown.split(regex));
+  const clean = /(a-z\s)/gi;
+  // but i need to keep the (/-.)
+
+  // so regex for [()] and (())
+  return markdown;
+}
