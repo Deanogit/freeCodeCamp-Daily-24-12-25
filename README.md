@@ -35,6 +35,6 @@ if (match) {
 
     -   **Escaping Characters**: Understood that characters like `[` and `(` have special meanings in Regex and must be "escaped" with a backslash `\` to be treated as a literal text.
 
-    -   **Destructuring Arrays**: Used array indicies from the `match` result to cleanly assign variables, a common patter in data parsing.
+    -   **Destructuring Arrays**: Used array indices from the `match` result to cleanly assign variables, a common pattern in data parsing.
 
     -   **HTML Consistency**: Focused on the specific requirements for attribute order and quotes, which is vital when generating code meant for browser rendering.
