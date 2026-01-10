@@ -12,26 +12,40 @@
 // Make sure the tag, order of attributes, spacing, and quote usage is the same as above.
 // Note: The console may not display HTML tags in strings when logging messages — check the browser console to see logs with tags included.
 
+// function parseImage(markdown) {
+//   console.log(markdown);
+//   // "![alt text](image_url)"
+
+//   // capture the alt text & image url
+//   // split the string? or regex capture groups?
+//   const first = /\!\[/gi;
+//   const second = /]\(/gi;
+//   const third = /\)/gi;
+
+//   const firstSplit = markdown.split(first);
+//   const secondSplit = firstSplit[1].split(second);
+//   const thirdSplit = secondSplit[1].split(third);
+//   console.log(secondSplit[0]);
+//   console.log(thirdSplit[0]);
+
+//   // const clean = /\!\[/gi
+//   // const split = markdown.split(regex))
+//   // but i need to keep the (/-.)
+
+//   // so regex for [()] and (())
+//   return `<img src="${thirdSplit[0]}" alt="${secondSplit[0]}">`;
+// }
+
 function parseImage(markdown) {
-  console.log(markdown);
-  // "![alt text](image_url)"
+  //
+  const regex = /!\[(.*?)\]\((.*?)\)/;
 
-  // capture the alt text & image url
-  // split the string? or regex capture groups?
-  const first = /\!\[/gi;
-  const second = /]\(/gi;
-  const third = /\)/gi;
+  const match = markdown.match(regex);
 
-  const firstSplit = markdown.split(first);
-  const secondSplit = firstSplit[1].split(second);
-  const thirdSplit = secondSplit[1].split(third);
-  console.log(secondSplit[0]);
-  console.log(thirdSplit[0]);
+  if (match) {
+    const altText = match[1];
+    const imageUrl = match[2];
 
-  // const clean = /\!\[/gi
-  // const split = markdown.split(regex))
-  // but i need to keep the (/-.)
-
-  // so regex for [()] and (())
-  return `<img src="${thirdSplit[0]}" alt="${secondSplit[0]}">`;
+    return `<img src="${imageUrl}" alt="${altText}">`;
+  }
 }
